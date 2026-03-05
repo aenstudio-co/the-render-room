@@ -167,7 +167,7 @@ section { padding: 80px 40px; max-width: 1160px; margin: 0 auto; }
 .card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
@@ -370,12 +370,13 @@ footer p { font-size: 0.75rem; color: var(--muted); }
 .mobile-menu.open { display: flex; }
 .mobile-menu a {
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 300;
   color: var(--white);
   text-decoration: none;
   padding: 12px;
   border-radius: 8px;
-  background: var(--blue);
+  border-color: #3a5da8;
+  background: var(--blue-light);
   text-align: center;
   border-bottom: none;
   transition: background 0.2s;
