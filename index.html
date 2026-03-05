@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Render Room</title>
+  <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    a.card { text-decoration: none; color: var(--text); display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="logo-box">
+        <span>the render room</span>
+        <div class="logo-dot tl"></div>
+        <div class="logo-dot br"></div>
+      </div>
+    </a>
+    <div class="nav-cta">
+      <a href="mailto:hello@therenderroom.com" class="btn-solid">Order Here</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#gallery" onclick="toggleMenu()">Browse Gallery</a>
+    <a href="mailto:hello@therenderroom.com" class="btn-solid mobile-order">Order Here</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-tag">Digital Design Assets</p>
+    <h1>Templates for <em>creatives</em></h1>
+    <p class="hero-sub">Browse our collection of design templates and assets.</p>
+    <div class="hero-actions">
+      <a href="#gallery" class="btn-solid">Browse Gallery</a>
+      <a href="mailto:hello@therenderroom.com" class="btn-ghost">Order Here</a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <p class="section-label">Products</p>
+    <h2 class="section-heading">The <em>collection</em></h2>
+
+    <div class="gallery-grid">
+
+      <a class="card featured" href="prints.html">
+        <div class="card-thumb">
+          <img src="../assets/images/brand-kit-pro.jpg" alt="Brand Kit Pro"/>
+        </div>
+        <div class="card-body">
+          <p class="card-title">Brand Kit Pro</p>
+          <p class="card-desc">Logos, palettes, and typography guides. 47 files.</p>
+          <div class="card-footer">
+            <span class="card-price">$49</span>
+            <button class="card-btn">Browse</button>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="prints.html">
+        <div class="card-thumb">
+          <img src="../assets/images/ui-component-set.jpg" alt="UI Component Set"/>
+        </div>
+        <div class="card-body">
+          <p class="card-title">UI Component Set</p>
+          <p class="card-desc">120+ production-ready UI components.</p>
+          <div class="card-footer">
+            <span class="card-price">$23</span>
+            <button class="card-btn">Browse</button>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="prints.html">
+        <div class="card-thumb">
+          <img src="../assets/images/social-media-pack.jpg" alt="Social Media Pack"/>
+        </div>
+        <div class="card-body">
+          <p class="card-title">Social Media Pack</p>
+          <p class="card-desc">80+ templates for IG, FB and LinkedIn.</p>
+          <div class="card-footer">
+            <span class="card-price">$18</span>
+            <button class="card-btn">Browse</button>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="prints.html">
+        <div class="card-thumb">
+          <img src="../assets/images/presentation-deck.jpg" alt="Presentation Deck"/>
+        </div>
+        <div class="card-body">
+          <p class="card-title">Presentation Deck</p>
+          <p class="card-desc">60 layouts for pitches and reports.</p>
+          <div class="card-footer">
+            <span class="card-price">$29</span>
+            <button class="card-btn">Browse</button>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="prints.html">
+        <div class="card-thumb">
+          <img src="../assets/images/icon-library.jpg" alt="Icon Library"/>
+        </div>
+        <div class="card-body">
+          <p class="card-title">Icon Library</p>
+          <p class="card-desc">SVG, PNG and Figma. Commercial license.</p>
+          <div class="card-footer">
+            <span class="card-price">$15</span>
+            <button class="card-btn">Browse</button>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="prints.html">
+        <div class="card-thumb">
+          <img src="../assets/images/typography-bundle.jpg" alt="Typography Bundle"/>
+        </div>
+        <div class="card-body">
+          <p class="card-title">Typography Bundle</p>
+          <p class="card-desc">12 font pairings with style guides.</p>
+          <div class="card-footer">
+            <span class="card-price">$12</span>
+            <button class="card-btn">Browse</button>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 The Render Room</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <p class="modal-price" id="modalPrice"></p>
+      <div class="modal-actions">
+        <a href="mailto:hello@therenderroom.com" class="btn-solid">Order Here</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script/script.js"></script>
+</body>
+</html>

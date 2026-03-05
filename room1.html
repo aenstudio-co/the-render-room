@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prints — The Render Room</title>
+  <link rel="icon" href="../assets/images/logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    #gallery .gallery-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    #gallery .card,
+    #gallery .card.featured {
+      grid-column: span 1;
+    }
+    #gallery .card-thumb,
+    #gallery .card.featured .card-thumb {
+      aspect-ratio: 1 / 1;
+    }
+    #gallery .thumb-icon { font-size: 2rem; }
+    #gallery .card-body { padding: 12px; }
+    #gallery .card-title { font-size: 0.82rem; }
+    #gallery .card-desc { font-size: 0.72rem; margin-bottom: 10px; }
+    #gallery .card-price { font-size: 1rem; }
+    #gallery .card-btn { font-size: 0.7rem; padding: 5px 10px; }
+
+    @media (max-width: 860px) {
+      #gallery .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 560px) {
+      #gallery .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .page-header {
+      padding: 80px 40px 20px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+    .back-link {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      display: inline-block;
+      margin-bottom: 12px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--blue); }
+    .page-header h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+    .page-header h1 em { font-style: italic; color: var(--blue); }
+
+    @media (max-width: 560px) {
+      .page-header { padding: 90px 16px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-box">
+        <span>the render room</span>
+        <div class="logo-dot tl"></div>
+        <div class="logo-dot br"></div>
+      </div>
+    </a>
+    <div class="nav-cta">
+      <a href="/cdn-cgi/l/email-protection#177f727b7b7857637f726572797372656578787a3974787a" class="btn-solid">✉️ Order Here</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">← Back to Rooms</a>
+    <a href="/cdn-cgi/l/email-protection#cfa7aaa3a3a08fbba7aabdaaa1abaabdbda0a0a2e1aca0a2" class="btn-solid mobile-order">✉️ Order Here</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <a href="index.html" class="back-link">← All Rooms</a>
+    <h1>🖨️ <em>Prints</em></h1>
+  </div>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="gallery-grid">
+
+      <div class="card" onclick="openModal('A3 Poster Pack','🖼️','Set of 10 minimal poster layouts in A3. Editable in Illustrator and Photoshop.','$25')">
+        <div class="card-thumb" style="background:linear-gradient(135deg,#a8bde3,#5b7ec5);">
+          <span class="thumb-icon">🖼️</span>
+          <span class="card-tag">Best Seller</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title">A3 Poster Pack</p>
+          <p class="card-desc">10 minimal poster layouts. Illustrator & Photoshop.</p>
+          <div class="card-footer">
+            <span class="card-price">$25</span>
+            <button class="card-btn">View</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="openModal('Event Flyer Kit','📄','8 event flyer templates for print and digital. A5 and A6 sizes.','$15')">
+        <div class="card-thumb" style="background:linear-gradient(135deg,#dce7f5,#a8bde3);">
+          <span class="thumb-icon">📄</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title">Event Flyer Kit</p>
+          <p class="card-desc">8 flyer templates. A5 and A6 sizes.</p>
+          <div class="card-footer">
+            <span class="card-price">$15</span>
+            <button class="card-btn">View</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="openModal('Menu Template','🍽️','Restaurant and cafe menu layout. Foldable tri-panel design.','$18')">
+        <div class="card-thumb" style="background:linear-gradient(135deg,#eef3fb,#dce7f5);">
+          <span class="thumb-icon">🍽️</span>
+          <span class="card-tag">New</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title">Menu Template</p>
+          <p class="card-desc">Cafe and restaurant tri-panel menu.</p>
+          <div class="card-footer">
+            <span class="card-price">$18</span>
+            <button class="card-btn">View</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="openModal('Business Card Set','💳','5 clean business card layouts. Front and back. Print-ready CMYK.','$12')">
+        <div class="card-thumb" style="background:linear-gradient(135deg,#a8bde3,#7a9fd4);">
+          <span class="thumb-icon">💳</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title">Business Card Set</p>
+          <p class="card-desc">5 layouts. Print-ready CMYK files.</p>
+          <div class="card-footer">
+            <span class="card-price">$12</span>
+            <button class="card-btn">View</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="openModal('Banner Layout','🎌','Wide-format banner templates. Horizontal and vertical variants.','$20')">
+        <div class="card-thumb" style="background:linear-gradient(135deg,#dce7f5,#c5d7f0);">
+          <span class="thumb-icon">🎌</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title">Banner Layout</p>
+          <p class="card-desc">Wide-format. Horizontal and vertical.</p>
+          <div class="card-footer">
+            <span class="card-price">$20</span>
+            <button class="card-btn">View</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="openModal('Sticker Sheet','🏷️','Printable sticker sheet templates in round, square, and die-cut.','$10')">
+        <div class="card-thumb" style="background:linear-gradient(135deg,#3a5da8,#5b7ec5);">
+          <span class="thumb-icon">🏷️</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title">Sticker Sheet</p>
+          <p class="card-desc">Round, square, and die-cut variants.</p>
+          <div class="card-footer">
+            <span class="card-price">$10</span>
+            <button class="card-btn">View</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 The Render Room</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <p class="modal-price" id="modalPrice"></p>
+      <div class="modal-actions">
+        <a href="/cdn-cgi/l/email-protection#f098959c9c9fb084989582959e949582829f9f9dde939f9d

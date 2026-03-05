@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — The Render Room</title>
+  <link rel="icon" href="../assets/images/logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .about-section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 100px 40px 80px;
+    }
+    .about-section h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .about-section h1 em { font-style: italic; color: var(--blue); }
+    .about-section p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .about-stat {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--blue-wash);
+    }
+    .about-stat-num {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--blue-deep);
+      margin-bottom: 4px;
+    }
+    .about-stat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    @media (max-width: 560px) {
+      .about-section { padding: 90px 20px 60px; }
+      .about-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-box">
+        <span>the render room</span>
+        <div class="logo-dot tl"></div>
+        <div class="logo-dot br"></div>
+      </div>
+    </a>
+    <div class="nav-cta">
+      <a href="mailto:hello@therenderroom.com" class="btn-solid">Order Here</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Browse Gallery</a>
+    <a href="mailto:hello@therenderroom.com" class="btn-solid mobile-order">Order Here</a>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about-section">
+    <p class="section-label">About Us</p>
+    <h1>We make things<br><em>worth printing</em></h1>
+    <p>The Render Room is a small digital design studio offering ready-to-use templates across four rooms — Prints, Zines, Templates, and Packaging. Everything we make is built to be immediately useful, visually clean, and easy to customize.</p>
+    <p>We started as a passion project between designers who were tired of overpriced, over-complicated assets. So we built the kind of shop we always wanted to buy from.</p>
+
+    <hr class="about-divider"/>
+
+    <p class="section-label">What we offer</p>
+    <div class="about-grid">
+      <div class="about-stat">
+        <div class="about-stat-num">4</div>
+        <div class="about-stat-label">Rooms to browse</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">100+</div>
+        <div class="about-stat-label">Ready-to-use files</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">∞</div>
+        <div class="about-stat-label">Commercial use allowed</div>
+      </div>
+    </div>
+
+    <hr class="about-divider"/>
+
+    <p class="section-label">Get in touch</p>
+    <p>Have a custom request or just want to say hello? Drop us a message and we'll get back to you.</p>
+    <a href="mailto:hello@therenderroom.com" class="btn-solid" style="margin-top:8px;">Order Here</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 The Render Room</p>
+  </footer>
+
+  <script src="../script/script.js"></script>
+</body>
+</html>
