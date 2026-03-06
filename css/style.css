@@ -167,7 +167,7 @@ section { padding: 80px 40px; max-width: 1160px; margin: 0 auto; }
 .card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 2px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
