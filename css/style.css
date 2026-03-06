@@ -16,9 +16,14 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Google Sans', sans-serif;
-  background: var(--white);
+  background-color: var(--white);
+  background-image:
+    linear-gradient(var(--blue-pale) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blue-pale) 1px, transparent 1px);
+  background-size: 48px 48px;
   color: var(--text);
   overflow-x: hidden;
+
 }
 
 /* NAV */
@@ -95,14 +100,9 @@ nav {
   justify-content: center;
   text-align: center;
   padding: 100px 24px 60px;
-  background:
-    linear-gradient(var(--blue-pale) 1px, transparent 1px),
-    linear-gradient(90deg, var(--blue-pale) 1px, transparent 1px);
-  background-size: 48px 48px;
-  background-color: var(--white);
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
 }
 
 .hero-tag {
@@ -428,4 +428,7 @@ footer p { font-size: 0.75rem; color: var(--muted); }
   .modal { padding: 28px 20px; border-radius: 14px; }
   .modal-actions { flex-direction: column; }
   .modal-actions a { text-align: center; }
+}
+footer {
+  background: var(--white);
 }
